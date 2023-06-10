@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/responsive_styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Home</title>
+    <script src="../scripts/index.js" defer></script>
+  </head>
+  <body class="bg-black scrollbar">
+    <div class="pages" id="page">
+      <!-- navigation -->
+      <!-- <div id="page"> -->
+      <nav id="navbar" class="primary-navigation underline-indicators fs-500">
+        <a
+          class="text-orange letter-spacing-2 numbered-title links"
+          href="#landing-page"
+          ><span class="letter-spacing-3">01</span> Home</a
+        >
+        <a
+          class="text-orange letter-spacing-2 numbered-title links"
+          href="#portfolio"
+          ><span class="letter-spacing-3">02</span> Portfolio</a
+        >
+        <a
+          class="text-orange letter-spacing-2 numbered-title links"
+          href="#about"
+          ><span class="letter-spacing-3">03</span> About</a
+        >
+        <a
+          class="text-orange letter-spacing-2 numbered-title links"
+          href="#contacts"
+          ><span class="letter-spacing-3">04</span> Contact</a
+        >
+      </nav>
+      <!-- </div> -->
+
+      <!-- landing page section -->
+      <section class="landing-page link-section" id="landing-page">
+        <!-- helps with element flow for the navbar which is fixed -->
+        <div class="spacer"></div>
+        <div class="name-container">
+          <p class="ff-serif fs-500 hey-there">HELLO THERE, IM</p>
+          <p class="uppercase ff-serif fs-1100 ryan">Ryan</p>
+          <p class="ff-serif fs-500 hey-there2">WEB DEVELOPER HERE</p>
+        </div>
+        <!-- explore button -->
+        <button
+          type="button"
+          id="popup"
+          class="large-button ff-serif fs-500 text-orange"
+        >
+          <p>How</p>
+          <p>can</p>
+          <p>l</p>
+          <p>help?</p>
+          <!-- Explore -->
+        </button>
+      </section>
+
+      <!-- popup dialog box -->
+      <div id="popup-box" class="popup bg-dark">
+        <div class="popup-head">
+          <p class="text-darkRed ff-serif fs-500">
+            What do you want to "EXPLORE"...?
+          </p>
+          <button id="popup-close">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+        <div id="popup-options" class="popup-options">
+          <a href="#portfolio" class="popup-option">
+            <img
+              class="popup-img rotate-faster"
+              src="../images/question-mark-g8ca86aaf5_640-min.jpg"
+              alt="?"
+            />
+            <p class="off text-orange ff-sans-cond fs-300">
+              WEB?... Work I've done that resides out there, somewhere in the
+              vast virtual space of the Internet.
+            </p>
+          </a>
+          <a href="#about" class="popup-option">
+            <img
+              class="popup-img rotate"
+              src="../images/question-mark-g8ca86aaf5_640-min.jpg"
+              alt="?"
+            />
+            <p class="off text-orange ff-sans-cond fs-300">
+              Who am l behind that "WEB DEVELOPER HERE" mask? What is it that l
+              can really do besides write life at least on the internet...
+            </p>
+          </a>
+          <a href="#contacts" class="popup-option">
+            <img
+              class="popup-img rotate-slower"
+              src="../images/question-mark-g8ca86aaf5_640-min.jpg"
+              alt="?"
+            />
+            <p class="off text-orange ff-sans-cond fs-300">
+              <!-- RESUME?... except for the 'equator' everything has a starting
+              point. Maybe tommorrow we can both say he definately is not the
+              equator and this was his starting point. -->
+              Interested or simply curious... lets scratch that now, together.
+            </p>
+          </a>
+        </div>
+      </div>
+
+      <!-- portfolio -->
+      <div class="portfolio-page link-section" id="portfolio">
+        <!-- helps with element flow for the navbar which is fixed -->
+        <div class="spacer"></div>
+        <section>
+          <p class="text-accent portfolio-txt">
+            It’s no surprise that I also think professional portfolios are
+            important. If your profession or skill lends itself to this
+            modality, it’s a method to not only display samples of work (whether
+            you’re actively looking for jobs or not), but also an opportunity to
+            perform the skills that your resume would say you have. A small
+            gallery of recent random projects chosen by me. I've done them all
+            just a glimpse of my skills in practice. Skills which include
+          </p>
+        </section>
+        <div id="projects" class="projects">
+          <div id="projectA" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img src="../images/weather3-min.jpg" alt="project-picture" />
+              </picture>
+              <!-- <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption> -->
+            </figure>
+          </div>
+          <div id="projectB" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img
+                  src="../images/Screenshot (1145)-min.png"
+                  alt="project-picture"
+                />
+              </picture>
+              <!-- <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption> -->
+            </figure>
+          </div>
+          <div id="projectC" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img src="../images/recipe2-min.jpg" alt="project-picture" />
+              </picture>
+              <!-- <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption> -->
+            </figure>
+          </div>
+          <div id="projectD" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img src="../images/preview-min2.jpg" alt="project-picture" />
+              </picture>
+              <!-- <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption> -->
+            </figure>
+          </div>
+          <!-- <div id="projectE" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img src="../images/" alt="project-picture" />
+              </picture>
+              <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption>
+            </figure>
+          </div>
+          <div id="projectF" class="project">
+            <figure class="project-a">
+              <picture class="project-pic">
+                <img src="../images/" alt="project-picture" />
+              </picture>
+              <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption>
+            </figure>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- text, scroll labels and popup dialog box -->
+      <div id="about" class="about-page link-section">
+        <!-- helps with element flow for the navbar which is fixed -->
+        <div class="spacer"></div>
+        <section class="about-txt">
+          <p class="fs-500 text-darkRed">
+            The ODYSSEY of a FULL STACK WEB DEVELOPER...
+          </p>
+          <p class="fs-400">
+            The web can sometimes be indistinguishable from magic, because with
+            knowledge and patience you can make just about anything. Personally
+            l am a dedicated individual, relentless when it comes to the tech
+            cause. I want to leave a dent in the tech world "CHANGE THE WORLD"
+            cliche l know, but try me. Over here the focus is simply fast
+            performance, responsive, intuitive and dynamic websites:
+          </p>
+        </section>
+
+        <div class="about-txt-focus">
+          <figure class="focus-1">
+            <picture class="focus-pic">
+              <!-- <source media="(min-width:45em)" srcset="../images/1-min.jpg" /> -->
+              <img src="../images/1-min.jpg" alt="Flowers" />
+            </picture>
+            <figcaption>
+              <b> Fast </b>
+              <br />
+              load times and lag free interaction, my highest priority. Trying
+              to make web performance prototype that is too good to be without.
+            </figcaption>
+          </figure>
+          <figure class="focus-2">
+            <picture class="focus-pic">
+              <!-- <source media="(min-width:45em)" srcset="../images/2-min.png" /> -->
+              <img src="../images/2-min.png" alt="Flowers" />
+            </picture>
+            <figcaption>
+              <b>Responsive</b>
+              <br />
+              My layouts will work on any device, big or small. As long as its a
+              screen.
+            </figcaption>
+          </figure>
+          <figure class="focus-3">
+            <picture class="focus-pic">
+              <!-- <source media="(min-width:45em)" srcset="../images/3-min.png" /> -->
+              <img src="../images/3-min.png" alt="Flowers" />
+            </picture>
+            <figcaption>
+              <b>Intuitive</b>
+              <br />
+              Strong preference for easy to use, intuitive UX/UI.
+            </figcaption>
+          </figure>
+          <figure class="focus-4">
+            <picture class="focus-pic">
+              <!-- <source media="(min-width:45em)" srcset="../images/4-min.jpg" /> -->
+              <img src="../images/4-min2.jpg" alt="Flowers" />
+            </picture>
+            <figcaption>
+              <b>Dynamic</b>
+              <br />
+              Websites don't have to be static, I love making pages come to life
+              with movement.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- scroll labels -->
+      <a
+        href="#landing-page"
+        class="text-orange scroll-down left ball"
+        title="arrow-up"
+        id="left"
+      >
+        <i class="fa fa-sharp fa-arrow-up"></i>
+      </a>
+      <a
+        href="#contacts"
+        class="text-orange scroll-down right ball"
+        title="arrow-down"
+        id="right"
+      >
+        <i class="fa fa-sharp fa-arrow-down"></i>
+      </a>
+
+      <!-- <hr /> -->
+
+      <div id="contacts" class="contacts bg-orange link-section">
+        <!-- helps with element flow for the navbar which is fixed -->
+        <div class="spacer"></div>
+        <!--contacts section-->
+        <section class="contacts-header fs-500 text-darkRed">
+          Willing, Working & Winning one day at time...
+        </section>
+
+        <form id="contacts-login" action="/" method="post">
+          <fieldset class="fieldset">
+            <legend class="fs-500 text-black">lets win together?</legend>
+            <div id="one">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="name"
+                class="bg-dark text-orange name"
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                class="bg-dark text-orange email"
+              />
+            </div>
+            <!-- <input
+              type="text"
+              name="message"
+              id="message"
+              placeholder="your message"
+              class="bg-dark text-grey"
+            /> -->
+            <div id="two">
+              <textarea
+                id="message"
+                placeholder="your message"
+                name="message"
+                rows="14"
+                cols="10"
+                wrap="soft"
+                maxlength="800"
+                class="bg-dark text-orange message"
+              ></textarea>
+              <input
+                type="submit"
+                value="Login"
+                id="submit"
+                class="bg-dark text-orange submit"
+              />
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="contacts-details">
+          <a
+            id="profile-link1"
+            title="contacts-link"
+            href="https://github.com/Blackbottt"
+            class="contact-details text-black ff-serif fs-400"
+            ><i class="fa fa-github icon"></i
+          ></a>
+          <a
+            id="profile-link2"
+            title="contacts-link"
+            href="https://codepen.io/your-work/"
+            class="contact-details text-black ff-serif fs-400"
+            ><i class="fa fa-codepen icon"></i
+          ></a>
+          <a
+            id="profile-link3"
+            title="contacts-link"
+            class="contact-details text-black ff-serif fs-400"
+            ><i class="fa fa-phone icon"></i
+          ></a>
+          <div id="call" class="call-off">
+            CALL ME ON '0774 917 053' OR WHATSAPP OR TELEGRAM OR SMS...(click me
+            to disappear!)
+          </div>
+          <a
+            id="profile-link4"
+            title="contacts-link"
+            href="#"
+            class="contact-details text-black ff-serif fs-400"
+            ><i class="fa fa-free-code-camp icon"></i
+          ></a>
+        </div>
+        <section class="contacts-footer text-black ff-serif fs-400">
+          Handcrafted by me <i class="fa fa-copyright"></i> twentytwentythree
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

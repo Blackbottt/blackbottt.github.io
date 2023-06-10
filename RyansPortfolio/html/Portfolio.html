@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/responsive_styles.css" />
+    <!-- <link rel="stylesheet" href="../styles/portfolio_styles.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Portfolio</title>
+    <script src="../scripts/index.js" defer></script>
+  </head>
+  <body class="bg-dark">
+    <div class="page" id="page">
+      <!-- navigation -->
+      <nav id="navbar2" class="primary-navigation underline-indicators">
+        <a
+          class="text-orange letter-spacing-2 numbered-title active"
+          href="./Home.html#page"
+          ><span class="letter-spacing-3">01</span> Home</a
+        >
+        <a
+          class="text-orange letter-spacing-2 numbered-title"
+          href="./Portfolio.html"
+          ><span class="letter-spacing-3">02</span> Portfolio</a
+        >
+        <a
+          class="text-orange letter-spacing-2 numbered-title"
+          href="./Home.html#about"
+          ><span class="letter-spacing-3">03</span> About</a
+        >
+        <a class="text-orange letter-spacing-2 numbered-title" href="#contacts"
+          ><span class="letter-spacing-3">04</span> Contact</a
+        >
+      </nav>
+
+      <!-- landing page section -->
+
+      <!-- scroll labels -->
+      <div>
+        <a href="#footer" class="scroll-down left">
+          <p>Scroll</p>
+          <i class="fa fa-sharp fa-arrow-down"></i>
+        </a>
+      </div>
+      <div>
+        <a href="#footer" class="scroll-down right">
+          <p>Arrow</p>
+          <i class="fa fa-sharp fa-arrow-down"></i>
+        </a>
+      </div>
+      <!-- <hr /> -->
+      <div id="contacts" class="contacts bg-orange">
+        <!--contacts section-->
+        <section>
+          <h2 class="fs-500 text-darkRed contacts-txt">
+            Willing, Working & Winning one day at time...
+          </h2>
+        </section>
+
+        <form id="contacts-login" action="/" method="post">
+          <fieldset class="fieldset">
+            <legend class="fs-500 text-black">lets win together?</legend>
+            <div>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="name"
+                class="bg-dark text-grey"
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email"
+                class="bg-dark text-grey"
+              />
+            </div>
+            <!-- <input
+              type="text"
+              name="message"
+              id="message"
+              placeholder="your message"
+              class="bg-dark text-grey"
+            /> -->
+            <textarea
+              id="message"
+              placeholder="your message"
+              name="message"
+              rows="14"
+              cols="10"
+              wrap="soft"
+              maxlength="800"
+              class="bg-dark text-grey"
+            ></textarea>
+
+            <div class="submit">
+              <input
+                type="submit"
+                value="Login"
+                id="submit"
+                class="bg-dark text-grey"
+              />
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="contacts-details">
+          <a
+            href="#"
+            target="_blank"
+            class="contact-details color text-black ff-serif fs-400"
+            ><i class="fa fa-github"></i
+          ></a>
+          <a
+            href="#"
+            target="_blank"
+            class="contact-details color text-black ff-serif fs-400"
+            ><i class="fa fa-codepen"></i
+          ></a>
+          <a
+            href="#"
+            target="_blank"
+            class="contact-details color text-black ff-serif fs-400"
+            ><i class="fa fa-phone"></i
+          ></a>
+          <a
+            href="#"
+            target="_blank"
+            class="contact-details color text-black ff-serif fs-400"
+            ><i class="fa fa-free-code-camp"></i
+          ></a>
+        </div>
+        <p class="text-black color ff-serif fs-400">
+          Handcrafted by me <i class="fa fa-copyright"></i> twentytwentythree
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+When righting code for a new project the first thing to do is:
+- begin with a general reset for your css. This solves all issues to do with differences in browser defaults.
+- then make utility classes this makes your life easier.
+
+Css&Html Requirements:
+Colors:
+    orange: FF6107
+    redorange: E9290F
+    redbrown: C40018
+    nearblack: 292725
+Typography
+Interactive Elements
+
+
