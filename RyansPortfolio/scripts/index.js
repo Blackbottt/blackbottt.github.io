@@ -35,6 +35,26 @@ function addEvent (el, event, callback) {
     }
 }
 
+window.addEventListener('load', function(e){
+    console.log(e.target.location.hash);
+    id = e.target.location.hash.slice(1,);
+    console.log(id);
+    activelink = id.toUpperCase;
+    if(activelink == "PORTFOLIO"){
+        console.log(activelink);
+        return navbar.childNodes[3].classList.add('active');
+    }
+    else if(activelink == "ABOUT"){
+        return navbar.childNodes[5].classList.add('active');
+    }
+    else if(activelink == "CONTACT"){
+        return navbar.childNodes[7].classList.add('active');
+    } else if(!activelink){
+        activelink = "HOME";
+        return navbar.childNodes[1].classList.add('active');
+    }
+});
+
 addEvent(navbar, 'click', function(e) {
     // This function changes active nav link based on clicked navbar link
     let clicked = e.target;     //get clicked element
@@ -67,6 +87,8 @@ addEvent(explore, 'click', function(e) {
 // close popup dialog box
 addEvent(popupClose, 'click', function(e) {
     popupBox.className = "popup"; 
+    navbar.childNodes[1].classList.add('active');
+    activelink = "HOME";
 });
 // get popup option page
 addEvent(popupBox, 'click', function(e) {
@@ -157,67 +179,67 @@ addEvent(call, 'click', function(e){
     call.className = "call-off";
 });
 
-// function activelink(idx){
-//     var nodes = navbar.childNodes;
-//     // console.log(nodes);
-//     for(let i = 0; i < nodes.length; i++){
-//         if(nodes[i].nodeName == "#text") continue;
-//         if(nodes[i].classList.length == 4){
-//             nodes[i].classList.remove("active");      //remove active class
-//         }
-//     }
-//     // console.log("55", nodes[idx].nodeValue == "     ");
-//     if(nodes[idx].nodeValue !== "A"){
-//         return nodes[idx].classList.add("active");
-//     }
-// }
+function activelinkss(idx){
+    var nodes = navbar.childNodes;
+    // console.log(nodes);
+    for(let i = 0; i < nodes.length; i++){
+        if(nodes[i].nodeName == "#text") continue;
+        if(nodes[i].classList.length == 4){
+            nodes[i].classList.remove("active");      //remove active class
+        }
+    }
+    // console.log("55", nodes[idx].nodeValue == "     ");
+    if(nodes[idx].nodeValue !== "A"){
+        return nodes[idx].classList.add("active");
+    }
+}
 
-// function myFunction() {
-//     var pageId = page.getBoundingClientRect();
-//     console.log("rect...", pageId)
-//     var portfolioId = portfolio.getBoundingClientRect(); 
-//     console.log("rect...", portfolioId)
-//     var aboutId = about.getBoundingClientRect(); 
-//     console.log("rect...", aboutId)
-//     var contactsId = contacts.getBoundingClientRect(); 
-//     console.log("rect...", contactsId)
+function myFunction() {
+    var pageId = page.getBoundingClientRect();
+    console.log("rect...", pageId)
+    var portfolioId = portfolio.getBoundingClientRect(); 
+    console.log("rect...", portfolioId)
+    var aboutId = about.getBoundingClientRect(); 
+    console.log("rect...", aboutId)
+    var contactsId = contacts.getBoundingClientRect(); 
+    console.log("rect...", contactsId)
 
-//     console.log("window", window)
+    console.log("window", window)
 
-//     var isVisiblePage = (pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight);
-//     console.log("visible?1", pageId.top);
-//     console.log("visible?2", pageId.bottom);
-//     console.log("visible?3", window.innerHeight);
-//     console.log("visible?3", "(pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight)");
-//     console.log("visible?", isVisiblePage);
-//     var isVisiblePortfolio = (portfolioId.top >= 0) && (portfolioId.bottom <= window.innerHeight || portfolioId.bottom - 100 <= window.innerHeight || portfolioId.bottom + 100 <= window.innerHeight );
-//     console.log("visible?", isVisiblePortfolio);
-//     var isVisibleAbout = (aboutId.top >= 0) && (aboutId.bottom <= window.innerHeight || aboutId.bottom - 100 <= window.innerHeight || aboutId.bottom + 100 <= window.innerHeight);
-//     console.log("visible?", isVisibleAbout);
-//     var isVisibleContacts = (contactsId.top >= 0) && (contactsId.bottom <= window.innerHeight || contactsId.bottom - 100 <= window.innerHeight || contactsId.bottom + 100 <= window.innerHeight);
-//     console.log("visible?", isVisibleContacts);
-//         // console.log('linkIdx');
+    var isVisiblePage = (pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight);
+    console.log("visible?1", pageId.top);
+    console.log("visible?2", pageId.bottom);
+    console.log("visible?3", window.innerHeight);
+    console.log("visible?3", "(pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight)");
+    console.log("visible?", isVisiblePage);
+    var isVisiblePortfolio = (portfolioId.top >= 0) && (portfolioId.bottom <= window.innerHeight || portfolioId.bottom - 100 <= window.innerHeight || portfolioId.bottom + 100 <= window.innerHeight );
+    console.log("visible?", isVisiblePortfolio);
+    var isVisibleAbout = (aboutId.top >= 0) && (aboutId.bottom <= window.innerHeight || aboutId.bottom - 100 <= window.innerHeight || aboutId.bottom + 100 <= window.innerHeight);
+    console.log("visible?", isVisibleAbout);
+    var isVisibleContacts = (contactsId.top >= 0) && (contactsId.bottom <= window.innerHeight || contactsId.bottom - 100 <= window.innerHeight || contactsId.bottom + 100 <= window.innerHeight);
+    console.log("visible?", isVisibleContacts);
+        // console.log('linkIdx');
 
-//     if(isVisiblePage) {
-//         linkIdx = 1;
-//         // console.log(linkIdx);
-//         activelink(linkIdx);
-//     }
-//     if(isVisiblePortfolio) {
-//         linkIdx = 3;
-//         // console.log(linkIdx);
-//         activelink(linkIdx);
-//     }
-//     if(isVisibleAbout) {
-//         linkIdx = 5;
-//         // console.log(linkIdx);
-//         activelink(linkIdx);
-//     }
-//     if(isVisibleContacts) {
-//         linkIdx = 7;
-//         // console.log(linkIdx);
-//         activelink(linkIdx);
-//     }
-// }    
+    if(isVisiblePage) {
+        linkIdx = 1;
+        // console.log(linkIdx);
+        activelinks(linkIdx);
+    }
+    if(isVisiblePortfolio) {
+        linkIdx = 3;
+        // console.log(linkIdx);
+        activelinks(linkIdx);
+    }
+    if(isVisibleAbout) {
+        linkIdx = 5;
+        // console.log(linkIdx);
+        activelinks(linkIdx);
+    }
+    if(isVisibleContacts) {
+        linkIdx = 7;
+        // console.log(linkIdx);
+        activelinks(linkIdx);
+    }
+}    
 
-// window.addEventListener("scroll", myFunction());
+window.addEventListener("scroll", myFunction());
