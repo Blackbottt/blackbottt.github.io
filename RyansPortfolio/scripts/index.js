@@ -4,10 +4,6 @@ const popupBox = document.getElementById('popup-box');      //get popup dialog b
 const popupClose = document.getElementById('popup-close');     //get popup dialogue box close button
 const scrollLeft = document.getElementById("left");      //scroll left button
 const scrollRight = document.getElementById("right");       //scroll right button
-// const page = document.getElementById("landing-page");     //get page
-// const portfolio = document.getElementById("portfolio");     //get portfolio
-// const about = document.getElementById("about");     //get about
-// const contacts = document.getElementById("contacts");     //get navbar
 const submit = document.getElementById("submit");       //login form submit button
 const github = document.getElementById("profile-link1");        //github profile link
 const codepen = document.getElementById("profile-link2");       //codepen link
@@ -16,7 +12,6 @@ const call = document.getElementById("call");
 const fcc = document.getElementById("profile-link4");       //freecodecamp profile link
 let activelink = "HOME";     //sets active navbar link
 
-// 1. When scrolling nav active label should change
 // 3.if page is about scroll positions should be at the top
 // 4.form should submit client request
 // 5.implement node for client-server side features
@@ -31,28 +26,17 @@ function addEvent (el, event, callback) {
         el[ event + callback ] = function() {   //Add 2nd method
             el['e' + event + callback](window.event);     //Use it to call prev func
         };
-        el.attachEvent('on' + event, el[event + callback])      //Use attachevent() to call the 2nd func, which then calls the first one
+        el.attachEvent('on' + event, el[event + callback]);      //Use attachevent() to call the 2nd func, which then calls the first one
     }
 }
 
-window.addEventListener('load', function(e){
-    console.log(e.target.location.hash);
+addEvent(window, 'load', function(e){
     id = e.target.location.hash.slice(1,);
-    console.log(id);
-    activelink = id.toUpperCase;
-    if(activelink == "PORTFOLIO"){
-        console.log(activelink);
-        return navbar.childNodes[3].classList.add('active');
-    }
-    else if(activelink == "ABOUT"){
-        return navbar.childNodes[5].classList.add('active');
-    }
-    else if(activelink == "CONTACT"){
-        return navbar.childNodes[7].classList.add('active');
-    } else if(!activelink){
-        activelink = "HOME";
-        return navbar.childNodes[1].classList.add('active');
-    }
+    activelink = id.toUpperCase();
+    if(activelink == "PORTFOLIO") return navbar.childNodes[3].classList.add('active');
+    else if(activelink == "ABOUT") return navbar.childNodes[5].classList.add('active');
+    else if(activelink == "CONTACTS") return navbar.childNodes[7].classList.add('active');
+    else return navbar.childNodes[1].classList.add('active');
 });
 
 addEvent(navbar, 'click', function(e) {
@@ -63,7 +47,6 @@ addEvent(navbar, 'click', function(e) {
     // remove all active navbar links on click by looping thru each a tag and each a tag's span tag
     navbar.childNodes.forEach(a => {
         if(a.nodeName !== "#text") {        //skip text nodes in IE
-            a.classList.remove("active");       //remove active class from a tag
             a.childNodes.forEach(span => {
                 if(span.nodeName !== "#text") {         //skip text nodes in IE
                     span.classList.remove("active");        //remove active class from span tag
@@ -71,7 +54,7 @@ addEvent(navbar, 'click', function(e) {
             });
         };   
     });
-    var children = navbar.childNodes;       //get a tags from navbar
+    remover();
     if (clicked.tagName.toLowerCase() === "span") {     //check if span
         clicked.classList.add("active");        //add active class to span tag
         clicked.parentNode.classList.add("active");     //add active class to a tag
@@ -94,17 +77,14 @@ addEvent(popupClose, 'click', function(e) {
 addEvent(popupBox, 'click', function(e) {
     popupBox.className = "popup"; 
     let clicked = e.target;     //get scroll a tag
-    let parent, id;     
+    let parent, id, ids;     
     // REMOVE ACTIVE CLASS FROM ALL 4 NAVBAR LINKS
-    navbar.childNodes[1].classList.remove('active');
-    navbar.childNodes[3].classList.remove('active');
-    navbar.childNodes[5].classList.remove('active');
-    navbar.childNodes[7].classList.remove('active');
-    if(clicked.nodeName !== "A") {       //if mouse clicks the img then get parent a tag 
+    remover();
+    if(clicked.nodeName !== "A" && clicked.nodeName != "svg" && clicked.nodeName != "path") {       //if mouse clicks the img then get parent a tag 
         parent = clicked.parentNode;        //if img get a tag
-        var ids = parent.href.split("#");       //split href string to get our id
-    }   else {
-        var ids = clicked.href.split("#");      //split href string to get our id
+        ids = parent.href.split("#");       //split href string to get our id
+    }   else if(clicked.nodeName !== "A"){
+        ids = clicked.href.split("#");      //split href string to get our id
     }   
     id = ids[1];        //select id text
     // MATCH ID TEXT TO NAVBAR HEADER LINKS
@@ -179,67 +159,35 @@ addEvent(call, 'click', function(e){
     call.className = "call-off";
 });
 
-function activelinkss(idx){
-    var nodes = navbar.childNodes;
-    // console.log(nodes);
-    for(let i = 0; i < nodes.length; i++){
-        if(nodes[i].nodeName == "#text") continue;
-        if(nodes[i].classList.length == 4){
-            nodes[i].classList.remove("active");      //remove active class
-        }
-    }
-    // console.log("55", nodes[idx].nodeValue == "     ");
-    if(nodes[idx].nodeValue !== "A"){
-        return nodes[idx].classList.add("active");
-    }
+function remover(){
+    navbar.childNodes[1].classList.remove('active');
+    navbar.childNodes[3].classList.remove('active');
+    navbar.childNodes[5].classList.remove('active');
+    navbar.childNodes[7].classList.remove('active');
 }
-
-function myFunction() {
+addEvent(window, "scroll", function myFunction(e) {
     var pageId = page.getBoundingClientRect();
-    console.log("rect...", pageId)
     var portfolioId = portfolio.getBoundingClientRect(); 
-    console.log("rect...", portfolioId)
     var aboutId = about.getBoundingClientRect(); 
-    console.log("rect...", aboutId)
     var contactsId = contacts.getBoundingClientRect(); 
-    console.log("rect...", contactsId)
-
-    console.log("window", window)
-
-    var isVisiblePage = (pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight);
-    console.log("visible?1", pageId.top);
-    console.log("visible?2", pageId.bottom);
-    console.log("visible?3", window.innerHeight);
-    console.log("visible?3", "(pageId.top >= 0) && (pageId.bottom <= window.innerHeight || pageId.bottom - 100 <= window.innerHeight || pageId.bottom + 100 <= window.innerHeight)");
-    console.log("visible?", isVisiblePage);
-    var isVisiblePortfolio = (portfolioId.top >= 0) && (portfolioId.bottom <= window.innerHeight || portfolioId.bottom - 100 <= window.innerHeight || portfolioId.bottom + 100 <= window.innerHeight );
-    console.log("visible?", isVisiblePortfolio);
-    var isVisibleAbout = (aboutId.top >= 0) && (aboutId.bottom <= window.innerHeight || aboutId.bottom - 100 <= window.innerHeight || aboutId.bottom + 100 <= window.innerHeight);
-    console.log("visible?", isVisibleAbout);
-    var isVisibleContacts = (contactsId.top >= 0) && (contactsId.bottom <= window.innerHeight || contactsId.bottom - 100 <= window.innerHeight || contactsId.bottom + 100 <= window.innerHeight);
-    console.log("visible?", isVisibleContacts);
-        // console.log('linkIdx');
-
+    var isVisiblePage = (0 >= pageId.y) && (pageId.y > -500); 
     if(isVisiblePage) {
-        linkIdx = 1;
-        // console.log(linkIdx);
-        activelinks(linkIdx);
+        remover();
+        navbar.childNodes[1].classList.add('active');
     }
+    var isVisiblePortfolio = (276 >= portfolioId.y); 
     if(isVisiblePortfolio) {
-        linkIdx = 3;
-        // console.log(linkIdx);
-        activelinks(linkIdx);
+        remover();
+        navbar.childNodes[3].classList.add('active');
     }
+    var isVisibleAbout = (228 >= aboutId.y) ; 
     if(isVisibleAbout) {
-        linkIdx = 5;
-        // console.log(linkIdx);
-        activelinks(linkIdx);
+        remover();
+        navbar.childNodes[5].classList.add('active');
     }
+    var isVisibleContacts = (99 >= contactsId.y); 
     if(isVisibleContacts) {
-        linkIdx = 7;
-        // console.log(linkIdx);
-        activelinks(linkIdx);
+        remover();
+        navbar.childNodes[7].classList.add('active');
     }
-}    
-
-window.addEventListener("scroll", myFunction());
+});
